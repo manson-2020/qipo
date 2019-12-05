@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>辣是时尚，味在七婆，七婆红唇～</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        border: 0;
+        animation: 1.5s loading;
+        box-sizing: border-box;
+        font-family: PingFang-Regular;
+    }
+
+    a {
+        text-decoration: none;
+        color: #333333;
+    }
+
+    :root {
+        font-size: 10px;
+    }
+
+    select,
+    input,
+    img,
+    select,
+    button {
+        vertical-align: middle;
+        font-size: 1rem;
+    }
+
+    @font-face {
+        font-family: PingFang-ExtraLight;
+        src: url("./fonts/PingFang ExtraLight_0.ttf");
+    }
+
+    @font-face {
+        font-family: PingFang-Bold;
+        src: url("./fonts/PingFang Bold_0.ttf");
+    }
+
+    @font-face {
+        font-family: PingFang-Heavy;
+        src: url("./fonts/PingFang Heavy_0.ttf");
+    }
+
+    @font-face {
+        font-family: PingFang-Light;
+        src: url("./fonts/PingFang Light_0.ttf");
+    }
+
+    @font-face {
+        font-family: PingFang-Medium;
+        src: url("./fonts/PingFang Medium_0.ttf");
+    }
+
+    @font-face {
+        font-family: PingFang-Regular;
+        src: url("./fonts/PingFang Regular_0.ttf");
+    }
+
+    @keyframes loading {
+        from {
+            opacity: 0.5;
+        }
+
+        to {
+            opacity: 1;
+
+        }
+    }
+
+    @keyframes gc {
+        from {
+            opacity: 0.2;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes slide {
+        from {
+            transform: translate(200%, -50%);
+        }
+
+        to {
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .wrapper .left-fixed {
+        position: fixed;
+        z-index: 999;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+
+    }
+
+    .left-fixed .kefu_content {
+        display: block;
+        width: 191px;
+        height: 472px;
+        background: url(./images/kfbg.png) no-repeat;
+    }
+
+    .left-fixed .kefu_content .list {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .close_btn {
+        height: 50px;
+        width: 100%;
+        display: block;
+        cursor: pointer;
+        background: url(./images/kefu_close.png) no-repeat 156px 10px;
+    }
+
+    .close_btn span {
+        display: none;
+    }
+
+    .left-fixed .kefu_content .list span {
+        float: left;
+        width: 114px;
+        text-align: center;
+        color: #FFF;
+    }
+
+    .left-fixed .kefu_content .list span.s1 {
+        height: 33px;
+        line-height: 33px;
+        margin-top: 44px;
+        margin-left: 38px;
+    }
+
+    .left-fixed .kefu_content .list span.s2 {
+        height: 50px;
+        line-height: 20px;
+        margin-top: 11px;
+        margin-left: 38px;
+        padding: 6px;
+    }
+
+    .left-fixed .kefu_content .list span.s3 {
+        height: 33px;
+        line-height: 33px;
+        margin-top: 11px;
+        margin-left: 38px;
+    }
+
+    .left-fixed .kefu_content .list span.s4 {
+        height: 33px;
+        line-height: 33px;
+        margin-top: 11px;
+        margin-left: 38px;
+    }
+
+    .left-fixed .kefu_content .list span.s5 {
+        margin-top: 18px;
+        margin-left: 38px;
+    }
+
+    .left-fixed .kefu_content .list span.s6 {
+        height: 33px;
+        line-height: 33px;
+        margin-top: 11px;
+        margin-left: 38px;
+    }
+
+    .left-fixed .kefu_content .list span a {
+        color: #FFF;
+    }
+
+    .wrapper header {
+        width: 100%;
+        min-width: 1280px;
+        position: fixed;
+        background: #c30505 url(images/navBG.png) center no-repeat;
+        z-index: 999;
+    }
+
+    .show_btn {
+        width: 49px;
+        height: 73px;
+        overflow: hidden;
+        float: left;
+        cursor: pointer;
+        background: url(./images/kefu_kai.png) no-repeat;
+        display: none;
+    }
+
+    .show_btn span {
+        display: none;
+    }
+
+    header .main {
+        width: 90%;
+        max-width: 1200px;
+        height: 80px;
+        margin: 0 auto;
+        z-index: 999;
+    }
+
+    header .logo {
+        float: left;
+        width: 20%;
+        height: 80px;
+        margin-left: 0px;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    header .logo img {
+        height: 47px;
+        margin-top: 15px;
+    }
+
+    header nav {
+        float: right;
+        width: 80%;
+        height: 80px;
+        margin-right: 0px;
+    }
+
+    nav a {
+        float: left;
+        width: 14.2%;
+        position: relative;
+        overflow: hidden;
+        transition: all .5s;
+        box-sizing: border-box;
+        display: block;
+        height: 80px;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+
+    nav a h2 {
+        line-height: 65px;
+        font-size: 15px;
+        color: #FFF;
+        font-weight: 600;
+    }
+
+    nav a span {
+        display: block;
+        margin-top: -20px;
+        font-size: 12px;
+        color: #e6b0ae;
+        font-weight: normal;
+    }
+
+    nav a.active,
+    nav a:hover {
+        background: #fff url(images/menuBG.png);
+        background-position: 23px 15px;
+        background-size: 66%;
+        border-right: 1px solid #d95c69;
+    }
+
+    nav a.active h2,
+    nav a:hover h2 {
+        color: #da0015;
+    }
+
+    nav a.active span,
+    nav a:hover span {
+        color: #b50012;
+    }
+
+    header .header-container {
+        padding-top: 0px;
+        margin-top: 0px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        position: absolute;
+        width: 100%;
+        height: 170px;
+        z-index: -999;
+        top: -80px;
+        transition: all 1s;
+    }
+
+    header .container-main {
+        width: 90%;
+        max-width: 1200px;
+        height: 150px;
+        margin: 0 auto;
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .header-container .navtel {
+        float: left;
+        width: 20%;
+        height: 150px;
+        margin-left: 0px;
+    }
+
+    .header-container .navtel img {
+        height: 52px;
+        margin-top: 45px;
+    }
+
+    .header-container ul {
+        float: right;
+        width: 80%;
+        height: 150px;
+        margin-top: 15px;
+        margin-right: 0px;
+    }
+
+    .header-container ul li {
+        float: left;
+        width: 14.2%;
+    }
+
+    .header-container ul li dl dd {
+        font-size: 1.36rem;
+        line-height: 2.6rem;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+
+    .header-container ul li dl dd a {
+        color: #b7190f;
+    }
+
+    .slider {
+        position: relative;
+        height: 100vh;
+    }
+
+    .slider ul {
+        white-space: nowrap;
+        font-size: 0;
+        overflow: hidden;
+    }
+
+    .slider .imgs li {
+        height: 100vh;
+        width: 100vw;
+        display: inline-block;
+        background: #ccc;
+        text-align: center;
+        position: relative;
+    }
+
+    .slider .imgs li img {
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+    }
+
+    .slider .imgs li:nth-child(1) {
+        background: url(./images/slider0.jpg) 100% 100%;
+    }
+
+    .slider .imgs li:nth-child(2) {
+        background: url(./images/slider1.jpg) 100% 100%;
+        display: none;
+    }
+
+    .slider .imgs li:nth-child(3) {
+        background: url(./images/slider2.jpg) 100% 100%;
+        display: none;
+    }
+
+    .slider .imgs .mask {
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.308)
+    }
+
+
+    .slider .dots {
+        display: flex;
+        width: 90px;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .slider .dots li {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        background: rgba(204, 204, 204, 0.815);
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .slider .dots li.active {
+        background: #fff;
+    }
+
+    .page-about .main {
+        width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .page-about .title {
+        width: 206px;
+        margin: 60px auto;
+        height: 56px;
+        background: url(images/about.png) no-repeat;
+    }
+
+    .page-about .text {
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .page-about .button {
+        width: 160px;
+        border: 1px solid #000;
+        text-align: center;
+        font-size: 16px;
+        height: 42px;
+        line-height: 42px;
+        margin: 50px auto 70px;
+    }
+
+    
+</style>
+
+<body>
+    <div class="wrapper">
+        <!-- 头部导航 -->
+        <header>
+            <div class="main">
+                <div class="logo">
+                    <a href="">
+                        <h1><img src="images/logo.png" alt=""></h1>
+                    </a>
+                </div>
+                <nav>
+                    <a href="" class="active">
+                        <h2>首页</h2>
+                        <span>HOME</span>
+                    </a>
+                    <a href="">
+                        <h2>关于我们</h2>
+                        <span>ABOUT</span>
+                    </a>
+                    <a href="">
+                        <h2>菜品展示</h2>
+                        <span>DELICIOUS</span>
+                    </a>
+                    <a href="">
+                        <h2>新闻快讯</h2>
+                        <span>NEWS</span>
+                    </a>
+                    <a href="">
+                        <h2>门店展示</h2>
+                        <span>STORES</span>
+                    </a>
+                    <a href="">
+                        <h2>合作加盟</h2>
+                        <span>JOIN</span>
+                    </a>
+                    <a href="">
+                        <h2>联系我们</h2>
+                        <span>CONTACT</span>
+                    </a>
+                </nav>
+            </div>
+
+            <div class="header-container">
+                <div class="container-main">
+                    <div class="navtel">
+                        <img src="images/tel.png" alt="" class="">
+                    </div>
+                    <ul>
+                        <li>&nbsp;</li>
+                        <li>
+                            <dl>
+                                <dd><a href="/about/a1/#m2">品牌故事</a></dd>
+                                <dd><a href="/about/a2/#m3">公司简介</a></dd>
+                                <dd><a href="/about/a3/#m4">品牌荣誉</a></dd>
+                                <dd><a href="/about/a4/#m5">民居环境</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            &nbsp;
+                            <dl>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dd><a href="/news/n1/#m8">公司新闻</a></dd>
+                                <dd><a href="/news/n2/#m9">行业动态</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dd><a href="/store/store/#m11">门店人气</a></dd>
+                                <dd><a href="/store/position/#m12">门店位置</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dd><a href="/partner/p1/#m14">经营理念</a></dd>
+                                <dd><a href="/partner/p2/#m15">加盟条件</a></dd>
+                                <dd><a href="/partner/p3/#m16">加盟流程</a></dd>
+                                <dd><a href="/partner/p4/#m17">总部支持</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            &nbsp;
+                            <dl>
+
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <!-- 侧边挂件 -->
+        <section class="left-fixed">
+            <div class="kefu_content">
+                <div class="list">
+                    <div class="close_btn"><span>关闭</span></div>
+                    <span class="s1"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=199306789&amp;site=qq&amp;menu=yes"
+                            target="_blank"><i class="iconfont icon-zx"></i>在线咨询</a></span>
+                    <span class="s2"><a href="/partner/"><i class="iconfont icon-zs"></i>招商加盟<br>400 028
+                            9958</a></span>
+                    <span class="s3"><a href="/contact/#message"><i class="iconfont icon-ly"></i>在线留言</a></span>
+                    <span class="s4"><a href="#" id="slide-1"><i class="iconfont icon-db"></i>返回顶部</a></span>
+                    <span class="s5"><img src="images/qr.jpg" width="99" height="99" title="关注官方微信"></span>
+                    <span class="s6">关注官方微信</span>
+                </div>
+            </div>
+            <div class="show_btn"><span>打开</span></div>
+        </section>
+
+        <!-- 轮播图 -->
+        <section class="slider">
+            <ul class="imgs">
+                <li>
+                    <div class="mask"></div>
+                    <img src="images/title.png" alt="">
+                </li>
+                <li>
+                    <div class="mask"></div>
+                    <img src="images/title.png" alt="">
+                </li>
+                <li>
+                    <div class="mask"></div>
+                    <img src="images/title.png" alt="">
+                </li>
+            </ul>
+            <ul class="dots">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </section>
+
+        <!-- 关于我们 -->
+        <section class="page-about">
+            <div class="main">
+                <h2 class="title"></h2>
+                <p class="text">
+                    从2002年初在温江柳春路开出第一家店<br>
+                    至今全国七婆门店数量已达1100多家<br>
+                    涵盖全国各省、市、自治区，并全面开启海外渠道
+                </p>
+                <div class="button">查看更多</div>
+                <video src="images/video.mp4" controls="controls"></video>
+            </div>
+        </section>
+
+        <!-- 菜品展示 -->
+        <section class="page-picture">
+        </section>
+
+        <!-- 新闻资讯 -->
+        <section class="page-news">
+        </section>
+
+        <!-- 门店展示 -->
+        <section class="page-mendian">
+        </section>
+
+        <!-- 合作加盟 -->
+        <section class="page-hezuo">
+        </section>
+    </div>
+</body>
+
+<script type="module">
+
+    class Home {
+        static $ = selector => document.querySelectorAll(selector);
+        constructor(elements) {
+            this.el = {};
+            for (const key in elements) {
+                this.el[key] = Array.from(Home.$(elements[key]));
+            }
+            this.init();
+        }
+
+        init() {
+            this.bindEvent();
+            this.runSlider();
+        }
+
+        bindEvent() {
+            //导航栏
+            this.el.navA.forEach(val => {
+                val.addEventListener("mousemove", () => {
+                    this.el.headerContainer[0].style.top = "80px";
+                    this.el.headerContainer[0].style.backgroundColor = "#f3f3f4";
+                });
+                val.addEventListener("mouseout", () => {
+                    this.el.headerContainer[0].style.top = "-80px";
+                    this.el.headerContainer[0].style.backgroundColor = "";
+                })
+            });
+            this.el.headerContainer[0].addEventListener("mousemove", () => {
+                this.el.headerContainer[0].style.top = "80px";
+                this.el.headerContainer[0].style.backgroundColor = "#f3f3f4";
+            });
+            this.el.headerContainer[0].addEventListener("mouseout", () => {
+                this.el.headerContainer[0].style.top = "-80px";
+                this.el.headerContainer[0].style.backgroundColor = "";
+            });
+
+            //侧边栏
+            this.el.closeBtn[0].addEventListener("click", () => {
+                this.el.kefuContent[0].style.display = "none";
+                this.el.showBtn[0].style.display = "block";
+            });
+            this.el.showBtn[0].addEventListener("click", () => {
+                this.el.kefuContent[0].style.display = "block";
+                this.el.showBtn[0].style.display = "none";
+            });
+
+            //轮播图
+            this.el.sliderDots.forEach((val, index) => {
+                val.addEventListener("click", () => {
+                    this.slider(index);
+                });
+            });
+        }
+        runSlider() {
+            this.slider(0);
+            let i = 1;
+            setInterval(() => {
+                if (i > (this.el.sliderImgs.length - 1)) {
+                    i = 0;
+                }
+                this.slider(i);
+                i++;
+            }, 5000);
+        }
+        slider(i) {
+            this.el.sliderImgs.forEach(imgsVal => {
+                imgsVal.style.display = "none";
+            });
+            this.el.sliderDots.forEach((dotsVal) => {
+                dotsVal.className = "";
+            });
+            this.el.sliderImgs[i].style.display = "inline-block";
+            this.el.sliderImgs[i].style.animation = "1.5s gc";
+            this.el.sliderDots[i].className = "active";
+
+            setTimeout(() => {
+                this.el.imgsTitle[i].style.animation = "1s slide";
+                this.el.imgsTitle[i].style.display = "inline-block";
+            }, 2000);
+        }
+    }
+
+    let elements = {
+        navA: "nav a",
+        headerContainer: "header .header-container",
+        sliderDots: ".dots li",
+        sliderImgs: ".imgs li",
+        imgsTitle: ".slider .imgs li img",
+        closeBtn: ".close_btn",
+        kefuContent: ".kefu_content",
+        showBtn: ".show_btn",
+        leftFixed: ".left-fixed"
+
+    };
+
+    new Home(elements);
+
+</script>
+
+</html>
